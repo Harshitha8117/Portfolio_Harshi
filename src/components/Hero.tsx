@@ -26,7 +26,11 @@ export default function Hero() {
             <a href="https://github.com/Harshitha8117" target="_blank"><FaGithub /></a>
             <a href="https://www.linkedin.com/in/harshitha-k-905a97257/" target="_blank"><FaLinkedin /></a>
             <a href="mailto:harshitha02012005@email.com"><FaEnvelope /></a>
-            <a href="/resume.pdf" target="_blank"><FaFileAlt /></a>
+            <a href="https://drive.google.com/file/d/1qHvdpAa6lnn31zNY1kGabz4wmjly8Y-p/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+  <FaFileAlt />
+</a>
+
+
           </div>
         </motion.section>
       </Tilt>

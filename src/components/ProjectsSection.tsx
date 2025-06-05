@@ -33,7 +33,7 @@ const projects: Project[] = [
     description: 'Developed an AI-powered plagiarism detection system using NLP techniques like TF-IDF and cosine similarity to identify exact and paraphrased content matches. Built with Flask for a user-friendly interface, it compares documents against a reference database and generates detailed similarity reports, ensuring accurate and transparent plagiarism evaluation. Ideal for academic and professional integrity verification.',
     imageUrl: 'https://cdn.gowinston.ai/wp-content/uploads/2023/09/winston-ai-plagiarism-checker-screenshot-2048x1152.jpg',
     previewUrl: 'https://project-three-demo.com',
-    githubUrl: 'https://github.com/yourusername/project-three',
+    githubUrl: 'https://github.com/Harshitha8117/Plagiarism_Detection',
   },
   {
     id: 4,
