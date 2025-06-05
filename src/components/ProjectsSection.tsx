@@ -25,7 +25,7 @@ const projects: Project[] = [
     description: 'An AI-powered traffic management system that uses deep learning to detect vehicles and analyze traffic density in real time. It captures video frames via camera, counts vehicles per lane, and intelligently controls traffic lights based on density. This enhances road efficiency and minimizes congestion dynamically.',
     imageUrl: 'https://www.eletimes.com/wp-content/uploads/2022/05/Traffic-AI-control-1200x600-1-768x384.jpg',
     previewUrl: 'https://project-two-demo.com',
-    githubUrl: 'https://github.com/yourusername/project-two',
+    githubUrl: 'https://github.com/Harshitha8117/Traffic-Lane-Analysis',
   },
   {
     id: 3,
