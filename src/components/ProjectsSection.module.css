@@ -199,3 +199,70 @@
     color: #00d4ff;
   }
 }
+
+
+.card {
+  background: rgba(255 255 255 / 0.12);
+  box-shadow: 0 12px 35px rgba(0,0,120,0.6);
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* NEW: For shimmer effect */
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease, background-color 0.35s ease;
+  cursor: pointer;
+  color: #d7e6ff;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #00e6ff66;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.06) rotateZ(1deg);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: #00f0ff;
+  animation: cardPulse 1.5s infinite alternate;
+  box-shadow:
+    0 0 10px #00e6ff88,
+    0 0 25px #00e6ffaa,
+    0 0 50px #00e6ffcc;
+}
+
+/* ✨ Shimmer Light Overlay */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  transform: skewX(-20deg);
+  z-index: 2;
+  pointer-events: none;
+  transition: left 0.6s ease;
+}
+
+.card:hover::after {
+  left: 125%;
+}
+
+/* 🌟 Pulse Glow Animation */
+@keyframes cardPulse {
+  0% {
+    box-shadow:
+      0 0 10px #00e6ff55,
+      0 0 20px #00cfff88,
+      0 0 40px #00bfff66;
+  }
+  100% {
+    box-shadow:
+      0 0 15px #00ffffaa,
+      0 0 30px #00ccffaa,
+      0 0 60px #00e6ffcc;
+  }
+}
