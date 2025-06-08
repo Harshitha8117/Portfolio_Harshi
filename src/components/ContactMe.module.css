@@ -7,13 +7,20 @@
 }
 
 .heading {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #222;
+  font-size: 2rem;
+  color: #00e6ff;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.3);
+  background: linear-gradient(to right, #00e6ff, #00faff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: subGlow 2.5s ease-in-out infinite alternate;
 }
 
 .subheading {
-  color: #555;
+  color:  #c6efff;
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
@@ -54,7 +61,7 @@
 }
 
 .button:hover {
-  background-color: #005bb5;
+  background-color: #dfe9f3;
 }
 
 .thankYou {
@@ -71,7 +78,7 @@
 }
 
 .socialLink {
-  color: #0070f3;
+  color: #c6efff;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
@@ -80,7 +87,7 @@
 }
 
 .socialLink:hover {
-  border-color: #0070f3;
+  border-color: #dfe9f3;
 }
 
 
@@ -162,19 +169,19 @@
   padding: 0.85rem 0;
   border: none;
   border-radius: 10px;
-  background-color: #448aff;
-  color: #0d1b2a;
+  background-color: #a3c9ff;  /* Light blue shade */
+  color: #0d1b2a;             /* Dark text for contrast */
   font-weight: 700;
   font-size: 1.15rem;
   cursor: pointer;
   transition: background-color 0.35s ease, box-shadow 0.35s ease;
   user-select: none;
-  box-shadow: 0 6px 20px #448affaa;
+  box-shadow: 0 6px 20px #a3c9ffcc;
 }
 
 .button:hover {
-  background-color: #2979ff;
-  box-shadow: 0 8px 30px #2979ffbb;
+  background-color: #7ebaff;  /* Slightly deeper light blue */
+  box-shadow: 0 8px 30px #7ebaffcc;
   color: #001429;
 }
 
@@ -185,4 +192,10 @@
   padding: 2rem;
   color: #a8cdfd;
   user-select: text;
+}
+
+@keyframes gradientShiftBlue {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

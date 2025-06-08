@@ -8,9 +8,9 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 export default function Hero() {
   return (
     <div className={styles.background}>
-      <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={true} glareColor="white">
+      <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={true} glareColor="#5a2eae">
         <motion.section className={styles.hero} initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-          <h1 className={styles.title}>HI, I'M HARSHITHA K! <span className={styles.wave}>👋</span></h1>
+          <h1 className={styles.title}>HI, I'M Harshitha K! <span className={styles.wave}>👋</span></h1>
           <p className={styles.subtitle}>
             <Typewriter
               words={['Software Engineer', 'Frontend Developer', 'Problem Solver']}

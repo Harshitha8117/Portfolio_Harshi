@@ -1,13 +1,16 @@
-html {
-  scroll-behavior: smooth;
-}
-body {
+html, body {
+  height: 100%;
   margin: 0;
-  font-family: sans-serif;
-  background-color: black;
-  color: white;
+  padding: 0;
+  background: #0a1f44;
+  /* rich navy-blue solid base */
+  background-image: radial-gradient(circle at center, #142a6b88 0%, #0a1f44dd 70%);
+  color: #c7d3f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
+#root, #__next {
+  height: 100%;
+  background: transparent;
 }

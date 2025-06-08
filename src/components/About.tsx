@@ -9,44 +9,97 @@ const paragraphs = [
   `Beyond development, I’ve earned certifications in IoT, Computer Networks, and Internet Protocols through NPTEL, reflecting my curiosity in system-level technologies. Additionally, I hold a Microsoft certification in Fundamentals of Azure, showcasing my readiness to explore cloud computing. I bring a blend of software skills and foundational knowledge to every project, aiming to bridge code with real-world impact.`
 ];
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.3,
+      duration: 0.7,
+      ease: [0.25, 0.8, 0.25, 1],
+    }
+  }),
+};
+
 export default function About() {
   return (
     <section className={styles.aboutSection} id="about">
       <motion.h2
         className={styles.heading}
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
+        variants={fadeInUp}
+        custom={0}
       >
         About Me
       </motion.h2>
+
       <div className={styles.text}>
         {paragraphs.map((para, i) => (
           <motion.p
             key={i}
             className={styles.paragraph}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 * i, duration: 0.6 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
+            variants={fadeInUp}
+            custom={i + 1}
           >
             {para}
           </motion.p>
         ))}
       </div>
-      <div className={styles.skills}>
-        {['HTML', 'CSS', 'JavaScript', 'React', 'Python', 'Java', 'MongoDB', 'SQL', 'Azure'].map((skill, i) => (
+
+      <motion.h3
+        className={styles.subheading}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+        custom={paragraphs.length + 1}
+      >
+        My Tech Stack
+      </motion.h3>
+
+      <motion.div
+        className={styles.skills}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1,
+              delayChildren: 0.3,
+            }
+          }
+        }}
+      >
+        {[
+          'HTML', 'CSS', 'JavaScript', 'React', 'Python',
+          'Java', 'MongoDB', 'SQL', 'Azure'
+        ].map((skill) => (
           <motion.span
             key={skill}
             className={styles.skillTag}
+            variants={{
+              hidden: { opacity: 0, scale: 0.8 },
+              visible: {
+                opacity: 1,
+                scale: 1,
+                transition: { type: 'spring', stiffness: 200, damping: 15 }
+              }
+            }}
             whileHover={{ scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 300 }}
           >
             {skill}
           </motion.span>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
