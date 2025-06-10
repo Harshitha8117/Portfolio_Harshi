@@ -56,7 +56,12 @@ const ProjectsSection: React.FC = () => {
       <div className={styles.grid}>
         {projects.map(({ id, title, description, imageUrl, previewUrl, githubUrl }) => (
           <div key={id} className={styles.card}>
-            <img src={imageUrl} alt={title} className={styles.image} />
+            <img
+              src={imageUrl}
+              alt={title}
+              className={styles.image}
+              loading="eager" // 👈 Force eager load
+            />
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.description}>{description}</p>
             <div className={styles.buttons}>

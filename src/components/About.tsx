@@ -3,10 +3,25 @@
 import styles from './About.module.css';
 import { motion } from 'framer-motion';
 
-const paragraphs = [
-  `I’m Harshitha, a Computer Science and Engineering student at K. Ramakrishnan College of Technology. I’m a Computer Science Engineer with a deep passion for solving complex problems. I actively sharpen my skills through coding challenges on platforms like LeetCode, HackerRank, SkillRank, and CodeChef. These experiences fuel my logical thinking and algorithmic intuition. With a focus on continuous growth, I am currently deep-diving into Data Structures and Algorithms to build a strong technical foundation.`,
-  `As a frontend developer, I craft responsive and user-friendly interfaces using HTML, CSS, and JavaScript. My technical toolkit also includes programming languages like C, Python, and Java, along with databases such as MongoDB and SQL. I’m currently expanding my capabilities by learning React to build dynamic and modern web applications. I’m driven by a vision to create seamless digital experiences.`,
-  `Beyond development, I’ve earned certifications in IoT, Computer Networks, and Internet Protocols through NPTEL, reflecting my curiosity in system-level technologies. Additionally, I hold a Microsoft certification in Fundamentals of Azure, showcasing my readiness to explore cloud computing. I bring a blend of software skills and foundational knowledge to every project, aiming to bridge code with real-world impact.`
+const summary =
+  `I'm Harshitha, a Computer Science and Engineering student at K. Ramakrishnan College of Technology, passionate about problem-solving and frontend development. From LeetCode to real-world projects, I blend logic, design, and modern tech stacks to craft impactful user experiences. I'm continuously learning — currently focused on React, DSA, and building a future in full-stack engineering.`;
+
+const cards = [
+  {
+    title: '💻 Code-First Mindset',
+    content:
+      'I thrive on platforms like LeetCode, HackerRank, and CodeChef — solving algorithmic challenges and sharpening my logic. My DSA journey fuels clean, efficient problem-solving.',
+  },
+  {
+    title: '🌐 Dev Toolkit',
+    content:
+      'From HTML/CSS/JS to React and Java, I build responsive, accessible interfaces. I also bring database skills (SQL, MongoDB) and cloud fundamentals (Azure) into play.',
+  },
+  {
+    title: '📚 Certified Explorer',
+    content:
+      'I’ve earned certifications in IoT, Computer Networks, and Azure Fundamentals — always pushing beyond frontend to understand the systems powering the web.',
+  },
 ];
 
 const fadeInUp = {
@@ -36,19 +51,31 @@ export default function About() {
         About Me
       </motion.h2>
 
-      <div className={styles.text}>
-        {paragraphs.map((para, i) => (
-          <motion.p
+      <motion.p
+        className={styles.paragraph}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+        custom={1}
+      >
+        {summary}
+      </motion.p>
+
+      <div className={styles.cardGrid}>
+        {cards.map((card, i) => (
+          <motion.div
             key={i}
-            className={styles.paragraph}
+            className={styles.card}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
-            custom={i + 1}
+            custom={i + 2}
           >
-            {para}
-          </motion.p>
+            <h4 className={styles.cardTitle}>{card.title}</h4>
+            <p className={styles.cardContent}>{card.content}</p>
+          </motion.div>
         ))}
       </div>
 
@@ -58,7 +85,7 @@ export default function About() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
-        custom={paragraphs.length + 1}
+        custom={cards.length + 2}
       >
         My Tech Stack
       </motion.h3>
