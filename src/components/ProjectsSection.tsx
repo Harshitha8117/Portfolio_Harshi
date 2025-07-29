@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styles from './ProjectsSection.module.css';
 
@@ -6,7 +8,6 @@ type Project = {
   title: string;
   description: string;
   imageUrl: string;
-  previewUrl: string;
   githubUrl: string;
 };
 
@@ -16,8 +17,7 @@ const projects: Project[] = [
     title: 'Wikipedia Clone',
     description:
       'A responsive web application that enables users to search and view Wikipedia articles in real-time using the Wikipedia API...',
-    imageUrl: 'https://p7.hiclipart.com/preview/1018/889/207/5bbf58007ddca.jpg',
-    previewUrl: 'https://project-one-demo.com',
+    imageUrl: 'https://tse4.mm.bing.net/th/id/OIP.Xtamlv7BdetmUJQThKerBAHaFv?rs=1&pid=ImgDetMain&o=7&rm=3',
     githubUrl: 'https://github.com/Harshitha8117/wikipedia',
   },
   {
@@ -26,7 +26,6 @@ const projects: Project[] = [
     description:
       'An AI-powered traffic management system that uses deep learning to detect vehicles and analyze traffic density in real time...',
     imageUrl: 'https://www.eletimes.com/wp-content/uploads/2022/05/Traffic-AI-control-1200x600-1-768x384.jpg',
-    previewUrl: 'https://project-two-demo.com',
     githubUrl: 'https://github.com/Harshitha8117/Traffic-Lane-Analysis',
   },
   {
@@ -35,7 +34,6 @@ const projects: Project[] = [
     description:
       'Developed an AI-powered plagiarism detection system using NLP techniques like TF-IDF and cosine similarity to identify content matches...',
     imageUrl: 'https://cdn.gowinston.ai/wp-content/uploads/2023/09/winston-ai-plagiarism-checker-screenshot-2048x1152.jpg',
-    previewUrl: 'https://project-three-demo.com',
     githubUrl: 'https://github.com/Harshitha8117/Plagiarism_Detection',
   },
   {
@@ -44,7 +42,6 @@ const projects: Project[] = [
     description:
       'This robust web application simplifies and automates the entire employee payroll process, minimizing errors and saving time...',
     imageUrl: 'https://raw.githubusercontent.com/niraj007m/payrollsystem/master/pms.png',
-    previewUrl: 'https://project-four-demo.com',
     githubUrl: 'https://github.com/Harshitha8117/Payroll_Management',
   },
 ];
@@ -54,24 +51,32 @@ const ProjectsSection: React.FC = () => {
     <section className={styles.projectsSection}>
       <h2 className={styles.heading}>My Projects</h2>
       <div className={styles.grid}>
-        {projects.map(({ id, title, description, imageUrl, previewUrl, githubUrl }) => (
+        {projects.map(({ id, title, description, imageUrl, githubUrl }) => (
           <div key={id} className={styles.card}>
             <img
               src={imageUrl}
               alt={title}
               className={styles.image}
-              loading="eager" // 👈 Force eager load
+              loading="lazy"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/fallback-image.jpg'; // Ensure this fallback exists in /public
+              }}
             />
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.description}>{description}</p>
-            <div className={styles.buttons}>
-              <a href={previewUrl} target="_blank" rel="noopener noreferrer" className={styles.button}>
-                Preview
-              </a>
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer" className={styles.buttonOutline}>
-                GitHub Repo
-              </a>
-            </div>
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.githubIconLink}
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/00ffff/github.png"
+                alt="GitHub Repository"
+                className={styles.githubIcon}
+              />
+            </a>
           </div>
         ))}
       </div>

@@ -1,201 +1,133 @@
 .contactSection {
   max-width: 600px;
   margin: 4rem auto;
-  padding: 0 1rem;
-  text-align: center;
+  padding: 2rem 1.5rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 16px;
+  background: rgba(0, 0, 30, 0.4);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.05);
+  animation: gradientShiftBlue 15s ease infinite;
+  user-select: none;
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  color: #d0faff;
 }
 
 .heading {
-  font-size: 2rem;
-  color: #00e6ff;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  text-shadow: 0 0 10px rgba(0, 230, 255, 0.3);
+  margin-bottom: 1.5rem;
+  text-align: center;
   background: linear-gradient(to right, #00e6ff, #00faff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
   animation: subGlow 2.5s ease-in-out infinite alternate;
 }
 
+@keyframes subGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #00e6ff;
+  }
+  50% {
+    text-shadow: 0 0 18px #00faff;
+  }
+}
+
 .subheading {
-  color:  #c6efff;
+  font-size: 1rem;
+  color: #b8dfff;
   margin-bottom: 2rem;
-  font-size: 1.1rem;
+  text-align: center;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 1.2rem;
 }
 
-.input,
-.textarea {
+.input, .textarea {
   padding: 0.75rem 1rem;
   font-size: 1rem;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
-  resize: vertical;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0, 255, 255, 0.2);
+  background-color: rgba(0, 0, 50, 0.3);
+  color: #dffcff;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.input:focus,
-.textarea:focus {
-  border-color: #0070f3;
+.input::placeholder, .textarea::placeholder {
+  color: #88cfff;
+  font-style: italic;
+}
+
+.input:focus, .textarea:focus {
+  border: 1.5px solid #00e6ff;
   outline: none;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  background-color: rgba(0, 20, 50, 0.4);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 .button {
-  padding: 0.85rem;
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
+  padding: 0.9rem;
+  background: linear-gradient(to right, #00e6ff, #00faff);
+  color: #000d1a;
+  font-weight: 700;
   font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .button:hover {
-  background-color: #dfe9f3;
-}
-
-.thankYou {
-  font-size: 1.25rem;
-  color: #0070f3;
-  font-weight: 600;
-  margin-bottom: 2rem;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 .socials {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
-.socialLink {
-  color: #c6efff;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease;
+.glassIcon {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.socialLink:hover {
-  border-color: #dfe9f3;
-}
-
-
-.contactSection {
-  max-width: 600px;
-  margin: 3rem auto 4rem;
-  padding: 2rem 1.5rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #004e92, #000428, #1e3c72, #2a5298);
-  background-size: 300% 300%;
-  animation: gradientShiftBlue 15s ease infinite;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  color: #d0e7ff;
-  user-select: none;
+.glassIcon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(0, 255, 255, 0.4);
+  cursor: pointer;
 }
 
 @keyframes gradientShiftBlue {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-.heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: #bbdefb;
-  text-shadow: 0 3px 10px rgba(0,0,50,0.7);
-  letter-spacing: 1.1px;
-  user-select: text;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #c8ddff;
-  user-select: text;
-}
-
-.input, .textarea {
-  margin-top: 0.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border: 2px solid #448aff;
-  background-color: rgba(255 255 255 / 0.1);
-  color: #e1f0ff;
-  font-size: 1rem;
-  font-weight: 400;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
-  user-select: text;
-}
-
-.input::placeholder, .textarea::placeholder {
-  color: #aacaff;
-  font-style: italic;
-}
-
-.input:focus, .textarea:focus {
-  outline: none;
-  border-color: #2979ff;
-  background-color: rgba(255 255 255 / 0.2);
-  box-shadow: 0 0 8px #2979ffaa;
-}
-
-.textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.button {
-  padding: 0.85rem 0;
-  border: none;
-  border-radius: 10px;
-  background-color: #a3c9ff;  /* Light blue shade */
-  color: #0d1b2a;             /* Dark text for contrast */
-  font-weight: 700;
-  font-size: 1.15rem;
-  cursor: pointer;
-  transition: background-color 0.35s ease, box-shadow 0.35s ease;
-  user-select: none;
-  box-shadow: 0 6px 20px #a3c9ffcc;
-}
-
-.button:hover {
-  background-color: #7ebaff;  /* Slightly deeper light blue */
-  box-shadow: 0 8px 30px #7ebaffcc;
-  color: #001429;
 }
 
 .thankYou {
-  font-size: 1.3rem;
-  font-weight: 600;
   text-align: center;
-  padding: 2rem;
-  color: #a8cdfd;
-  user-select: text;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  color: #aaffff;
+  font-weight: bold;
 }
 
-@keyframes gradientShiftBlue {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}

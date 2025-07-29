@@ -59,14 +59,26 @@ const ContactMe: React.FC = () => {
       )}
 
       <div className={styles.socials}>
-        <a href="mailto:harshitha02012005@gmail.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-          Email
+        <a href="mailto:harshitha02012005@gmail.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+            alt="Email"
+            className={styles.glassIcon}
+          />
         </a>
-        <a href="https://www.linkedin.com/in/harshitha-k-905a97257/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-          LinkedIn
+        <a href="https://www.linkedin.com/in/harshitha-k-905a97257/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+            alt="LinkedIn"
+            className={styles.glassIcon}
+          />
         </a>
-        <a href="https://github.com/Harshitha8117/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-          GitHub
+        <a href="https://github.com/Harshitha8117/" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+            alt="GitHub"
+            className={styles.glassIcon}
+          />
         </a>
       </div>
     </section>
